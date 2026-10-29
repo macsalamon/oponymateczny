@@ -1,0 +1,17 @@
+{
+  "name": "Opony Mateczny",
+  "tagline": "Krakowska firma oponiarska",
+  "url": "https://oponymateczny.pl",
+  "phones": [
+    { "number": "601 47 67 67" },
+    { "number": "601 67 64 67" }
+  ],
+  "office_phone": "12 656 75 36",
+  "email": "tgsalamon@interia.pl",
+  "street": "ul. Marii Konopnickiej 82",
+  "city": "Kraków",
+  "landmark": "rondo Matecznego",
+  "map_url": "https://www.google.com/maps/search/?api=1&query=Marii+Konopnickiej+82,+Krak%C3%B3w",
+  "hours_weekdays": "10:00–17:00",
+  "hours_saturday": "10:00–13:00"
+}

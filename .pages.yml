@@ -1,0 +1,106 @@
+# Konfiguracja edytora treści Pages CMS (https://app.pagescms.org)
+# Dzięki temu właściciel strony edytuje treść w przeglądarce, w formularzach,
+# a zmiany same trafiają na stronę (po ok. 1–2 minutach).
+
+media:
+  input: src/images
+  output: /images
+  categories: [image]
+  rename: safe
+
+content:
+  - name: tires
+    label: Opony nowe – oferty
+    type: file
+    path: src/_data/tires.json
+    format: json
+    fields:
+      - { name: heading, label: Nagłówek listy, type: string }
+      - { name: note, label: Informacja pod listą, type: text }
+      - name: items
+        label: Opony
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Nazwa opony, type: string }
+          - { name: size, label: Rozmiar (np. 195/65 R15 91H), type: string }
+          - { name: price, label: Cena (np. 179 zł), type: string }
+          - { name: note, label: Krótki opis (opcjonalnie), type: string }
+          - { name: image, label: Zdjęcie, type: image }
+
+  - name: prices
+    label: Cennik
+    type: file
+    path: src/_data/prices.json
+    format: json
+    fields:
+      - name: items
+        label: Pozycje cennika
+        type: object
+        list: true
+        fields:
+          - { name: item, label: Co, type: string }
+          - { name: price, label: Cena, type: string }
+
+  - name: home
+    label: Strona główna
+    type: file
+    path: src/_data/home.json
+    format: json
+    fields:
+      - name: cards
+        label: Trzy kafelki (Skup / Opony nowe / Przechowalnia)
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Tytuł, type: string }
+          - { name: image, label: Zdjęcie, type: image }
+          - { name: text, label: Tekst (pusta linia = nowy akapit; **pogrubienie**), type: text }
+          - { name: link, label: Adres linku (np. /cennik/) – może być pusty, type: string }
+          - { name: link_label, label: Napis na linku, type: string }
+      - { name: prices_heading, label: Nagłówek paska z cenami, type: string }
+      - name: advantages
+        label: Nasze atuty
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Tytuł, type: string }
+          - { name: text, label: Opis, type: text }
+      - { name: directions, label: Opis dojazdu (też na stronie Kontakt), type: text }
+
+  - name: site
+    label: Dane firmy (telefony, adres, godziny)
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - { name: name, label: Nazwa firmy, type: string }
+      - { name: tagline, label: Hasło pod nazwą, type: string }
+      - { name: url, label: Adres strony (nie zmieniać), type: string }
+      - name: phones
+        label: Telefony komórkowe (pierwszy jest w nagłówku strony)
+        type: object
+        list: true
+        fields:
+          - { name: number, label: Numer, type: string }
+      - { name: office_phone, label: Telefon biura, type: string }
+      - { name: email, label: E-mail, type: string }
+      - { name: street, label: Ulica i numer, type: string }
+      - { name: city, label: Miasto, type: string }
+      - { name: landmark, label: Punkt orientacyjny, type: string }
+      - { name: map_url, label: Link do mapy, type: string }
+      - { name: hours_weekdays, label: Godziny pon.–pt., type: string }
+      - { name: hours_saturday, label: Godziny w sobotę, type: string }
+
+  - name: pages
+    label: Strony z tekstem
+    type: collection
+    path: src/strony
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+    fields:
+      - { name: title, label: Tytuł strony, type: string }
+      - { name: description, label: Opis dla wyszukiwarek (1–2 zdania), type: text }
+      - { name: body, label: Treść, type: rich-text }

@@ -1,0 +1,30 @@
+---
+layout: base.njk
+title: Kontakt
+description: Opony Mateczny, ul. Marii Konopnickiej 82, Kraków (rondo Matecznego). Telefony, e-mail i godziny otwarcia.
+permalink: /kontakt/
+---
+<section class="page">
+  <div class="wrap narrow">
+    <h1>Kontakt</h1>
+    <div class="contact-grid">
+      <div>
+        <h2>Tu jesteśmy</h2>
+        <p class="address"><strong>{{ site.city | upper }}, {{ site.street }}</strong><br>({{ site.landmark }})</p>
+        <p><a class="btn" href="{{ site.map_url }}" rel="noopener">Pokaż na mapie</a></p>
+        {{ home.directions | md | safe }}
+      </div>
+      <div>
+        <h2>Telefony</h2>
+        <p class="phones">
+          {%- for p in site.phones %}<a href="{{ p.number | tel }}">{{ p.number }}</a><br>{% endfor %}
+          Biuro: <a href="{{ site.office_phone | tel }}">{{ site.office_phone }}</a>
+        </p>
+        <h2>E-mail</h2>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <h2>Godziny otwarcia</h2>
+        <p>Poniedziałek–piątek: <strong>{{ site.hours_weekdays }}</strong><br>Sobota: <strong>{{ site.hours_saturday }}</strong></p>
+      </div>
+    </div>
+  </div>
+</section>

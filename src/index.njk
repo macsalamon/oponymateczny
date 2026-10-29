@@ -1,0 +1,69 @@
+---
+layout: base.njk
+permalink: /
+description: Opony używane i nowe, felgi, skup i przechowalnia opon w Krakowie, ul. Konopnickiej 82. Największe centrum opon używanych i felg.
+---
+<section class="hero">
+  <div class="wrap">
+    <h1>{{ site.name }}</h1>
+    <p class="hero-phone"><a href="{{ site.phones[0].number | tel }}">{{ site.phones[0].number }}</a></p>
+    <p class="hero-tag">{{ site.tagline }}</p>
+    <div class="btns">
+      <a class="btn" href="/opony-uzywane/">Używane</a>
+      <a class="btn" href="/opony-nowe/">Nowe</a>
+      <a class="btn" href="/kontakt/">Kontakt</a>
+    </div>
+  </div>
+</section>
+
+<section class="cards wrap" aria-label="Oferta">
+  {%- for c in home.cards %}
+  <article class="card">
+    <div class="card-img" style="background-image:url('{{ c.image | url }}')"><h2>{{ c.title }}</h2></div>
+    <div class="card-body">
+      {{ c.text | md | safe }}
+      {%- if c.link %}<p><a class="more" href="{{ c.link }}">{{ c.link_label or 'Czytaj dalej' }} →</a></p>{% endif %}
+    </div>
+  </article>
+  {%- endfor %}
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>{{ home.prices_heading }}</h2>
+    {% include "prices.njk" %}
+    <p class="band-link"><a class="more" href="/cennik/">Pełny cennik →</a></p>
+  </div>
+</section>
+
+<section class="wrap strengths" aria-label="Nasze atuty">
+  <h2>Nasze atuty</h2>
+  <div class="strength-grid">
+    {%- for a in home.advantages %}
+    <div class="strength">
+      <h3>{{ a.title }}</h3>
+      <p>{{ a.text }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <h2>Potrzebujesz opon? Przyjedź!</h2>
+      <p class="address"><strong>{{ site.street }}, {{ site.city }}</strong> ({{ site.landmark }})</p>
+      {{ home.directions | md | safe }}
+    </div>
+    <div class="visit-box">
+      <h3>Godziny otwarcia</h3>
+      <p>Poniedziałek–piątek: <strong>{{ site.hours_weekdays }}</strong><br>Sobota: <strong>{{ site.hours_saturday }}</strong></p>
+      <h3>Telefon</h3>
+      <p>
+        {%- for p in site.phones %}<a href="{{ p.number | tel }}">{{ p.number }}</a><br>{% endfor %}
+        Biuro: <a href="{{ site.office_phone | tel }}">{{ site.office_phone }}</a>
+      </p>
+      <p><a class="btn" href="{{ site.map_url }}" rel="noopener">Pokaż na mapie</a></p>
+    </div>
+  </div>
+</section>

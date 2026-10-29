@@ -1,0 +1,13 @@
+<h2>{{ tires.heading }}</h2>
+<div class="tire-grid">
+  {%- for t in tires.items %}
+  <article class="tire">
+    <img src="{{ t.image }}" alt="{{ t.name }}" width="300" height="300" loading="lazy">
+    <h3>{{ t.name }}</h3>
+    <p class="size">{{ t.size }}</p>
+    <p class="price">{{ t.price }}</p>
+    {%- if t.note %}<p class="tire-note">{{ t.note }}</p>{% endif %}
+  </article>
+  {%- endfor %}
+</div>
+<p class="note">{{ tires.note }} Telefon: <a href="{{ site.phones[0].number | tel }}">{{ site.phones[0].number }}</a>.</p>

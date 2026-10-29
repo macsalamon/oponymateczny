@@ -1,0 +1,34 @@
+{
+  "heading": "Przykładowe oferty – opony letnie",
+  "note": "Cena za 1 sztukę. Oferta zmienia się w zależności od dostępności – zadzwoń po aktualne ceny i dostępność.",
+  "items": [
+    {
+      "name": "TOYO PROXES CF2",
+      "size": "195/65 R15 91H",
+      "price": "179 zł",
+      "note": "",
+      "image": "/images/opony/toyo-proxes-cf2.png"
+    },
+    {
+      "name": "SAETTA TOURING",
+      "size": "195/65 R15 91H",
+      "price": "155 zł",
+      "note": "Opony firmy Falken",
+      "image": "/images/opony/saetta-touring.png"
+    },
+    {
+      "name": "UNIROYAL RAIN EXPERT 3",
+      "size": "195/65 R15 91H",
+      "price": "180 zł",
+      "note": "Klasa premium, bardzo dobre parametry na mokrej nawierzchni",
+      "image": "/images/opony/uniroyal-rain-expert-3.png"
+    },
+    {
+      "name": "SAETTA PERFORMANCE",
+      "size": "205/55 R16 91V",
+      "price": "176 zł",
+      "note": "Super opona, mrozy pokona",
+      "image": "/images/opony/saetta-performance.png"
+    }
+  ]
+}

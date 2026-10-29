@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title and page.url != "/" %}{{ title }} | {% endif %}{{ site.name }}{% if page.url == "/" %} – {{ site.tagline }}{% endif %}</title>
+  <meta name="description" content="{{ description or 'Opony używane i nowe, felgi, skup i przechowalnia opon w Krakowie. ' ~ site.street ~ ', ' ~ site.city ~ '.' }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta name="theme-color" content="#101214">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:image" content="{{ site.url }}/images/hero-krakow.jpg">
+  <link rel="preload" href="/fonts/dosis-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TireShop",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}/",
+    "image": "{{ site.url }}/images/hero-krakow.jpg",
+    "telephone": "+48{{ site.phones[0].number | replace(' ', '') }}",
+    "email": "{{ site.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.street | replace('ul. ', '') }}",
+      "addressLocality": "{{ site.city }}",
+      "addressCountry": "PL"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "13:00" }
+    ]
+  }
+  </script>
+</head>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+  <a class="skip" href="#tresc">Przejdź do treści</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="/">{{ site.name }}</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav" class="nav" aria-label="Menu główne">
+        <a href="/o-firmie/"{% if page.url == '/o-firmie/' %} aria-current="page"{% endif %}>O firmie</a>
+        <a href="/opony-uzywane/"{% if page.url == '/opony-uzywane/' %} aria-current="page"{% endif %}>Opony używane</a>
+        <a href="/opony-nowe/"{% if page.url == '/opony-nowe/' %} aria-current="page"{% endif %}>Opony nowe</a>
+        <a href="/cennik/"{% if page.url == '/cennik/' %} aria-current="page"{% endif %}>Cennik</a>
+        <a href="/kontakt/"{% if page.url == '/kontakt/' %} aria-current="page"{% endif %}>Kontakt</a>
+        <a class="nav-phone" href="{{ site.phones[0].number | tel }}">{{ site.phones[0].number }}</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="tresc">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <div>
+        <strong>{{ site.name }}</strong><br>
+        {{ site.street }}, {{ site.city }}
+      </div>
+      <div>
+        {% for p in site.phones %}<a href="{{ p.number | tel }}">{{ p.number }}</a>{% if not loop.last %} · {% endif %}{% endfor %}<br>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+      <div>
+        Pon.–pt. {{ site.hours_weekdays }}<br>
+        Sob. {{ site.hours_saturday }}
+      </div>
+    </div>
+    <p class="wrap copy">© {% year %} {{ site.name }}. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var b = document.querySelector(".menu-btn"), n = document.getElementById("nav");
+      if (!b || !n) return;
+      b.addEventListener("click", function () {
+        var open = b.getAttribute("aria-expanded") === "true";
+        b.setAttribute("aria-expanded", String(!open));
+        n.classList.toggle("open", !open);
+      });
+    })();
+  </script>
+</body>
+</html>

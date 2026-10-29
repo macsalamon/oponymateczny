@@ -1,0 +1,41 @@
+{
+  "cards": [
+    {
+      "title": "Skup opon i felg",
+      "image": "/images/opony-skup.jpg",
+      "text": "Zapraszamy klientów posiadających opony lub felgi w dobrym stanie.\n\nJeżeli zmieniłeś samochód, felgi lub istnieje inny powód, dla którego rozmiar opon, felg lub całych kół, które posiadasz, nie będzie Ci już dłużej służył – przyjedź do nas.\n\nNa miejscu dokonamy rzetelnej wyceny wartości przedmiotów, które chcesz sprzedać.\n\nPamiętaj, że towar używany musi być wolny od wad i zdatny do dalszej eksploatacji. Nie przyjmujemy towaru wymagającego napraw lub posiadającego ślady niefachowych ingerencji.\n\n90% pozostawionego u nas w KOMISIE towaru znajduje nabywcę.",
+      "link": "",
+      "link_label": ""
+    },
+    {
+      "title": "Opony nowe",
+      "image": "/images/hero-krakow.jpg",
+      "text": "Oferujemy pełną gamę rozmiarów opon i felg wszystkich dostępnych na polskim rynku producentów.\n\nCeny konfigurujemy na najniższym możliwym poziomie, przy zachowaniu minimalnej marży.\n\nOfertę indywidualną konstruujemy w oparciu o szczegółowo sprecyzowane oczekiwania klienta. Służymy fachową poradą co do wyboru rodzaju oraz zakresu cenowego opon.\n\nCeny zawarte w ofertach na nowe opony i felgi są zawsze ostateczne i gwarantowane. Zadowolenie i satysfakcja naszych klientów jest dla nas zadaniem priorytetowym.",
+      "link": "/opony-nowe/",
+      "link_label": "Zobacz przykładowe oferty"
+    },
+    {
+      "title": "Przechowalnia",
+      "image": "/images/przechowalnia.jpg",
+      "text": "Zapraszamy do skorzystania z naszej przechowalni, w której mogą Państwo tanio i bezpiecznie przechować swoje opony lub koła do następnego sezonu.\n\nWyróżniamy dwa podstawowe okresy w jednolitej taryfie, na które zawieramy umowę o przechowanie opon:\n\n**od 1.X do 30.IV** oraz **od 1.III do 30.IX**",
+      "link": "/cennik/",
+      "link_label": "Zobacz cennik"
+    }
+  ],
+  "prices_heading": "Dobre opony to bezpieczeństwo",
+  "advantages": [
+    {
+      "title": "Wieloletnie doświadczenie",
+      "text": "Od ponad 20 lat działamy w branży oponiarskiej. Obsługujemy zarówno klientów indywidualnych, jak i firmy."
+    },
+    {
+      "title": "Fachowa i rzetelna obsługa",
+      "text": "Doradzamy przy wyborze opon i felg, a każdą używaną oponę sami selekcjonujemy według surowych kryteriów jakości."
+    },
+    {
+      "title": "Gwarancja i rękojmia",
+      "text": "Na każdą zakupioną u nas oponę używaną udzielamy gwarancji, a oferowany towar pochodzi ze sprawdzonych źródeł."
+    }
+  ],
+  "directions": "Nasz punkt mieści się na odcinku od ronda Matecznego w kierunku dawnego Hotelu FORUM. Wjazd bezpośrednio z ulicy Konopnickiej w posesję pod numerem 82.\n\nBiuro obsługi i sprzedaży mieści się bezpośrednio przy wjeździe na posesję i jest oznaczone pomarańczowym szyldem „BIURO OPONY FELGI”."
+}

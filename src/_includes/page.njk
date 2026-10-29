@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+<section class="page">
+  <div class="wrap narrow">
+    <h1>{{ title }}</h1>
+    <div class="prose">
+      {% if page.fileSlug == "cennik" %}{% include "prices.njk" %}{% endif %}
+      {{ content | safe }}
+      {% if page.fileSlug == "opony-nowe" %}{% include "tires.njk" %}{% endif %}
+    </div>
+  </div>
+</section>

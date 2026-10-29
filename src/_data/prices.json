@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "item": "Opony używane 13\", 14\", 15\"", "price": "od 40 do 80 zł" },
+    { "item": "Opony używane 16\", 17\", 18\"", "price": "od 50 do 150 zł" },
+    { "item": "Opony używane 19\", 20\", 21\"", "price": "od 100 zł" },
+    { "item": "Opony nowe", "price": "ceny internetowe lub niższe" },
+    { "item": "Felgi", "price": "od 40 do 150 zł" },
+    { "item": "Przechowalnia (4 opony lub koła)", "price": "od 100 zł" }
+  ]
+}
